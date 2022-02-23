@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{9A17FB9D-213F-46E1-A312-FA65FB43FD7A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PortsAdapters.Api", "src\PortsAdapters.Api\PortsAdapters.Api.csproj", "{C7B4A829-F269-43CB-842F-3C8491B6EF7E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PortsAdapters.Application", "src\PortsAdapters.Application\PortsAdapters.Application.csproj", "{80D4FE8A-F2A3-4D04-B2E1-0EE7B2910F08}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PortsAdapters.ExternalServices.AwsS3Storage", "src\PortsAdapters.ExternalServices.AwsS3Storage\PortsAdapters.ExternalServices.AwsS3Storage.csproj", "{D052D9A9-CDDD-4D23-A9BE-01DBE7B8B65A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PortsAdapters.ExternalServices.GoogleCloudStorage", "src\PortsAdapters.ExternalServices.GoogleCloudStorage\PortsAdapters.ExternalServices.GoogleCloudStorage.csproj", "{BC1D1EBF-0AD3-46B9-B704-D1686860D50D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C7B4A829-F269-43CB-842F-3C8491B6EF7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7B4A829-F269-43CB-842F-3C8491B6EF7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7B4A829-F269-43CB-842F-3C8491B6EF7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7B4A829-F269-43CB-842F-3C8491B6EF7E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80D4FE8A-F2A3-4D04-B2E1-0EE7B2910F08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80D4FE8A-F2A3-4D04-B2E1-0EE7B2910F08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80D4FE8A-F2A3-4D04-B2E1-0EE7B2910F08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80D4FE8A-F2A3-4D04-B2E1-0EE7B2910F08}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D052D9A9-CDDD-4D23-A9BE-01DBE7B8B65A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D052D9A9-CDDD-4D23-A9BE-01DBE7B8B65A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D052D9A9-CDDD-4D23-A9BE-01DBE7B8B65A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D052D9A9-CDDD-4D23-A9BE-01DBE7B8B65A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC1D1EBF-0AD3-46B9-B704-D1686860D50D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC1D1EBF-0AD3-46B9-B704-D1686860D50D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC1D1EBF-0AD3-46B9-B704-D1686860D50D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC1D1EBF-0AD3-46B9-B704-D1686860D50D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C7B4A829-F269-43CB-842F-3C8491B6EF7E} = {9A17FB9D-213F-46E1-A312-FA65FB43FD7A}
+		{80D4FE8A-F2A3-4D04-B2E1-0EE7B2910F08} = {9A17FB9D-213F-46E1-A312-FA65FB43FD7A}
+		{D052D9A9-CDDD-4D23-A9BE-01DBE7B8B65A} = {9A17FB9D-213F-46E1-A312-FA65FB43FD7A}
+		{BC1D1EBF-0AD3-46B9-B704-D1686860D50D} = {9A17FB9D-213F-46E1-A312-FA65FB43FD7A}
+	EndGlobalSection
+EndGlobal
