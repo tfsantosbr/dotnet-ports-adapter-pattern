@@ -1,0 +1,1 @@
+# dotnet-ports-adapter-pattern
