@@ -14,16 +14,16 @@ public class AwsS3Storage : IFileStorage
         _storage = new AmazonS3Client();
     }
 
-    public async Task DownloadFileAsync(string bucketName, string fileName, Stream destination)
+    public async Task DownloadFileAsync(string bucket, string fileName, Stream destination)
     {
-        using var storageObject = await _storage.GetObjectAsync(bucketName, fileName);
+        using var storageObject = await _storage.GetObjectAsync(bucket, fileName);
 
         await storageObject.ResponseStream.CopyToAsync(destination);
     }
 
-    public async Task<FileStorageInfo?> GetFileInfoAsync(string bucketName, string fileName)
+    public async Task<FileStorageInfo?> GetFileInfoAsync(string bucket, string fileName)
     {
-        var storageObject = await _storage.GetObjectMetadataAsync(bucketName, fileName);
+        var storageObject = await _storage.GetObjectMetadataAsync(bucket, fileName);
 
         if (storageObject is null)
             return null;
@@ -39,16 +39,16 @@ public class AwsS3Storage : IFileStorage
         return fileInfo;
     }
 
-    public async Task RemoveFileAsync(string bucketName, string fileName)
+    public async Task RemoveFileAsync(string bucket, string fileName)
     {
-        await _storage.DeleteObjectAsync(bucketName, fileName);
+        await _storage.DeleteObjectAsync(bucket, fileName);
     }
 
-    public async Task UploadFileAsync(string bucketName, string fileName, string contentType, Stream fileStream)
+    public async Task UploadFileAsync(string bucket, string fileName, string contentType, Stream fileStream)
     {
         var putObjectRequest = new PutObjectRequest
         {
-            BucketName = bucketName,
+            BucketName = bucket,
             Key = fileName,
             ContentType = contentType,
             InputStream = fileStream

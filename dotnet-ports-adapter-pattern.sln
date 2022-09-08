@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PortsAdapters.ExternalServi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PortsAdapters.ExternalServices.GoogleCloudStorage", "src\PortsAdapters.ExternalServices.GoogleCloudStorage\PortsAdapters.ExternalServices.GoogleCloudStorage.csproj", "{BC1D1EBF-0AD3-46B9-B704-D1686860D50D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PortsAdapters.ExternalServices.AzureBlobStorage", "src\PortsAdapters.ExternalServices.AzureBlobStorage\PortsAdapters.ExternalServices.AzureBlobStorage.csproj", "{21451AC1-ED53-4874-A94A-A74776CA4034}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -38,11 +40,16 @@ Global
 		{BC1D1EBF-0AD3-46B9-B704-D1686860D50D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BC1D1EBF-0AD3-46B9-B704-D1686860D50D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BC1D1EBF-0AD3-46B9-B704-D1686860D50D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21451AC1-ED53-4874-A94A-A74776CA4034}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21451AC1-ED53-4874-A94A-A74776CA4034}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21451AC1-ED53-4874-A94A-A74776CA4034}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21451AC1-ED53-4874-A94A-A74776CA4034}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{C7B4A829-F269-43CB-842F-3C8491B6EF7E} = {9A17FB9D-213F-46E1-A312-FA65FB43FD7A}
 		{80D4FE8A-F2A3-4D04-B2E1-0EE7B2910F08} = {9A17FB9D-213F-46E1-A312-FA65FB43FD7A}
 		{D052D9A9-CDDD-4D23-A9BE-01DBE7B8B65A} = {9A17FB9D-213F-46E1-A312-FA65FB43FD7A}
 		{BC1D1EBF-0AD3-46B9-B704-D1686860D50D} = {9A17FB9D-213F-46E1-A312-FA65FB43FD7A}
+		{21451AC1-ED53-4874-A94A-A74776CA4034} = {9A17FB9D-213F-46E1-A312-FA65FB43FD7A}
 	EndGlobalSection
 EndGlobal

@@ -14,6 +14,7 @@
     <ProjectReference Include="..\PortsAdapters.Application\PortsAdapters.Application.csproj" />
     <ProjectReference Include="..\PortsAdapters.ExternalServices.AwsS3Storage\PortsAdapters.ExternalServices.AwsS3Storage.csproj" />
     <ProjectReference Include="..\PortsAdapters.ExternalServices.GoogleCloudStorage\PortsAdapters.ExternalServices.GoogleCloudStorage.csproj" />
+    <ProjectReference Include="..\PortsAdapters.ExternalServices.AzureBlobStorage\PortsAdapters.ExternalServices.AzureBlobStorage.csproj" />
   </ItemGroup>
 
 </Project>

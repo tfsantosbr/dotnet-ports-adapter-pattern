@@ -1,5 +1,6 @@
 using PortsAdapters.Application.FileStorage;
 using PortsAdapters.ExternalServices.AwsS3Storage;
+using PortsAdapters.ExternalServices.AzureBlobStorage;
 using PortsAdapters.ExternalServices.GoogleCloudStorage;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,6 +11,7 @@ builder.Services.AddSwaggerGen();
 
 //builder.Services.AddTransient<IFileStorage, AwsS3Storage>();
 //builder.Services.AddTransient<IFileStorage, GoogleCloudStorage>();
+builder.Services.AddTransient<IFileStorage, AzureBlobStorage>();
 
 var app = builder.Build();
 

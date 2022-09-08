@@ -36,9 +36,9 @@ public class GoogleCloudStorage : IFileStorage
         return fileInfo;
     }
 
-    public async Task RemoveFileAsync(string bucketName, string fileName)
+    public async Task RemoveFileAsync(string bucket, string fileName)
     {
-        await _storage.DeleteObjectAsync(bucketName, fileName);
+        await _storage.DeleteObjectAsync(bucket, fileName);
     }
 
     public async Task UploadFileAsync(string bucket, string fileName, string contentType, Stream fileStream)
