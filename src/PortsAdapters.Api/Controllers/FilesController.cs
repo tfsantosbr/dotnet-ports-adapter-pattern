@@ -1,4 +1,6 @@
+using System.Text.RegularExpressions;
 using Microsoft.AspNetCore.Mvc;
+using MimeDetective;
 using PortsAdapters.Application.FileStorage;
 
 namespace PortsAdapters.Api.Controllers;
@@ -18,14 +20,32 @@ public class FilesController : ControllerBase
         _bucketName = configuration.GetValue<string>("FileStorage:BucketName");
     }
 
-    [HttpPost]
-    public async Task<IActionResult> CreateFile([FromForm] IFormFile file)
+    [HttpPost("multipart")]
+    public async Task<IActionResult> CreateFileMultipart([FromForm] IFormFile file)
     {
         var fileName = file.FileName;
         var contentType = file.ContentType;
         var fileStream = file.OpenReadStream();
 
         await _fileStorage.UploadFileAsync(_bucketName, fileName, contentType, fileStream);
+
+        return Ok();
+    }
+
+    [HttpPost("base64")]
+    public async Task<IActionResult> CreateFileJson([FromBody] FileData fileData)
+    {
+        var base64EncodedString = new Regex(@"^data:image\/[a-z]+;base64,").Replace(fileData.Data, "");
+
+        var bytes = Convert.FromBase64String(base64EncodedString);
+        Stream contents = new MemoryStream(bytes);
+
+        var contentType = GetMimeType(bytes);
+
+        if (contentType is null)
+            return BadRequest("Can't get file mime-type");
+
+        await _fileStorage.UploadFileAsync(_bucketName, fileData.Name, contentType, contents);
 
         return Ok();
     }
@@ -64,5 +84,25 @@ public class FilesController : ControllerBase
         await _fileStorage.RemoveFileAsync(_bucketName, fileName);
 
         return NoContent();
+    }
+
+    private string? GetMimeType(Byte[] fileContentInBytes)
+    {
+        var inspector = new ContentInspectorBuilder()
+        {
+            Definitions = MimeDetective.Definitions.Default.All()
+        }.Build();
+
+        var results = inspector.Inspect(fileContentInBytes);
+
+        var result = results.FirstOrDefault();
+
+        return result?.Definition.File.MimeType;
+    }
+
+    public class FileData
+    {
+        public string Name { get; set; } = null!;
+        public string Data { get; set; } = null!;
     }
 }

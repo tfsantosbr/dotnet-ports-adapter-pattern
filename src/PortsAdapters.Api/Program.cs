@@ -9,9 +9,9 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-//builder.Services.AddTransient<IFileStorage, AwsS3Storage>();
+builder.Services.AddTransient<IFileStorage, AwsS3Storage>();
 //builder.Services.AddTransient<IFileStorage, GoogleCloudStorage>();
-builder.Services.AddTransient<IFileStorage, AzureBlobStorage>();
+//builder.Services.AddTransient<IFileStorage, AzureBlobStorage>();
 
 var app = builder.Build();
 
